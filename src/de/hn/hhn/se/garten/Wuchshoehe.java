@@ -4,18 +4,16 @@ package de.hn.hhn.se.garten;
  */
 
 public enum Wuchshoehe {
-	;
-
-	private int EinCmBisZehnCm;
-	private int ZehnCmBisDreissigCm;
-	private int DreissigCmBisSechzigCm;
-	private int SechzigCmBisHundertCm;
-	private int EinMBisEinsFuenfM;
-	private int EinsFuenfMBisDreiM;
-	private int DreiMBisFuenfM;
-	private int FuenfMBisZehnM;
-	private int ZehnMBisZwanzigM;
-	private int ZwanzigMBisDreissigM;
-	private int DreissigMBisFuenfzigM;
+	EinCmBisZehnCm,
+	ZehnCmBisDreissigCm,
+	DreissigCmBisSechzigCm,
+	SechzigCmBisHundertCm,
+	EinMBisEinsFuenfM,
+	EinsFuenfMBisDreiM,
+	DreiMBisFuenfM,
+	FuenfMBisZehnM,
+	ZehnMBisZwanzigM,
+	ZwanzigMBisDreissigM,
+	DreissigMBisFuenfzigM
 
 }

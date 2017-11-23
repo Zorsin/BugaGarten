@@ -4,13 +4,11 @@ package de.hn.hhn.se.garten;
  */
 
 public enum Gewaechsart {
-	;
-
-	private int baum;
-	private int strauch;
-	private int kraut;
-	private int kletterpflanze;
-	private int gras;
-	private int farn;
+	baum,
+	strauch,
+	kraut,
+	kletterpflanze,
+	gras,
+	farn
 
 }
