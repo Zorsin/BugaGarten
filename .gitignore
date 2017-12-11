@@ -4,3 +4,5 @@
 BugaGarten.iml
 out/
 src/sample/
+build/
+*.class
