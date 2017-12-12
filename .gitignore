@@ -3,6 +3,8 @@
 .idea/
 BugaGarten.iml
 out/
+.gradle/
+*/.gradle/
 src/sample/
 build/
 *.class
