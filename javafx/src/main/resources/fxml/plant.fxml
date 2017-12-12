@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.se.pmt.garten.contentmanager.PlantController">
+   <children>
+      <Label layoutX="50.0" layoutY="75.0" text="Deutscher Name:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="75.0" />
+      <Label layoutX="50.0" layoutY="110.0" text="Botansicher Name:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="110.0" />
+      <Label layoutX="46.0" layoutY="372.0" text="Beschreibung:" AnchorPane.leftAnchor="50.0" />
+      <Label layoutX="549.0" layoutY="473.0" text="Blühdauer:" AnchorPane.leftAnchor="549.0" AnchorPane.topAnchor="473.0" />
+      <Label layoutX="549.0" layoutY="438.0" text="Blührzeitraum:" AnchorPane.leftAnchor="549.0" AnchorPane.topAnchor="438.0" />
+      <Label layoutX="549.0" layoutY="509.0" text="Lebensdauer:" AnchorPane.leftAnchor="549.0" AnchorPane.topAnchor="509.0" />
+      <Label layoutX="544.0" layoutY="75.0" text="Bodenart:*" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="75.0" />
+      <Label layoutX="549.0" layoutY="545.0" text="Anpflanzzeitraum:" AnchorPane.leftAnchor="549.0" />
+      <Label layoutX="50.0" layoutY="181.0" text="Wuchshöhe:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="181.0" />
+      <Label layoutX="549.0" layoutY="580.0" text="Duftend:" AnchorPane.leftAnchor="549.0" AnchorPane.topAnchor="580.0" />
+      <Label layoutX="50.0" layoutY="217.0" text="Gewächsart:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="217.0" />
+      <Label layoutX="50.0" layoutY="252.0" text="Blütenform:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="252.0" />
+      <Label layoutX="549.0" layoutY="403.0" text="Angepflanzt auf der BuGa:" AnchorPane.leftAnchor="549.0" AnchorPane.topAnchor="403.0" />
+      <Label layoutX="549.0" layoutY="615.0" text="Tags:" AnchorPane.leftAnchor="549.0" AnchorPane.topAnchor="615.0" />
+      <Label layoutX="50.0" layoutY="287.0" text="Blütenfarbe:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="287.0" />
+      <Label layoutX="50.0" layoutY="322.0" text="Fruchtfarbe:*" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="322.0" />
+      <TextField fx:id="textFieldBotName" layoutX="164.0" layoutY="106.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="106.0" />
+      <TextField fx:id="textFieldDeutName" layoutX="164.0" layoutY="71.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="71.0" />
+      <ComboBox fx:id="comboBoxBodenart" layoutX="164.0" layoutY="141.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="141.0" />
+      <ComboBox fx:id="comboBoxWuchshoehe" layoutX="164.0" layoutY="177.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="177.0" />
+      <ComboBox fx:id="comboBoxGewaechsart" layoutX="164.0" layoutY="213.0" prefHeight="25.0" prefWidth="260.0" />
+      <ComboBox fx:id="comboBoxBluetenform" layoutX="164.0" layoutY="248.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="248.0" />
+      <ComboBox fx:id="comboBoxBluetenfarbe" layoutX="164.0" layoutY="283.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="283.0" />
+      <ComboBox fx:id="comboBoxFruchtfarbe" layoutX="164.0" layoutY="318.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="318.0" />
+      <TextArea fx:id="textAreaBeschreibung" layoutX="46.0" layoutY="399.0" prefHeight="451.0" prefWidth="407.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="399.0" />
+      <ToggleButton fx:id="toogleButtonAngepflanzt" layoutX="743.0" layoutY="399.0" mnemonicParsing="false" text="nicht angepflanzt" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="399.0" />
+      <ToggleButton fx:id="toogleButtonDuftend" layoutX="743.0" layoutY="576.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="nicht duftend" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="576.0" />
+      <TextField fx:id="textfFieldBluezeitraum" layoutX="743.0" layoutY="434.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="434.0" />
+      <TextField fx:id="textfFieldBluehdauer" layoutX="743.0" layoutY="469.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="469.0" />
+      <TextField fx:id="textfFieldLebensdauer" layoutX="743.0" layoutY="505.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="505.0" />
+      <TextField fx:id="textfFieldAnpflanzzeitraum" layoutX="743.0" layoutY="541.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="541.0" />
+      <TextField fx:id="textfFieldTags" layoutX="743.0" layoutY="611.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="611.0" />
+      <FlowPane fx:id="flowPaneBodenart" layoutX="545.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
