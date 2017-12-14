@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class Start extends Application{
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("/fxml/plant.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("/fxml/filter.fxml"));
     primaryStage.setTitle("Pflanze hinzufügen");
     Scene scene = new Scene(root);
     primaryStage.setScene(scene);

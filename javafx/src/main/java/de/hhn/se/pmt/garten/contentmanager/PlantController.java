@@ -1,29 +1,23 @@
 package de.hhn.se.pmt.garten.contentmanager;
 
-    import java.net.URL;
-    import java.util.ArrayList;
-    import java.util.Arrays;
-    import java.util.List;
-    import java.util.ResourceBundle;
-
-    import de.hhn.se.pmt.garten.Bluetenform;
-    import de.hhn.se.pmt.garten.Bodenart;
-    import de.hhn.se.pmt.garten.Farbe;
-    import de.hhn.se.pmt.garten.Gewaechsart;
-    import de.hhn.se.pmt.garten.Wuchshoehe;
-    import javafx.fxml.FXML;
-    import javafx.geometry.Insets;
-    import javafx.scene.control.CheckBox;
-    import javafx.scene.control.CheckMenuItem;
-    import javafx.scene.control.ComboBox;
-    import javafx.scene.control.Label;
-    import javafx.scene.control.RadioButton;
-    import javafx.scene.control.SelectionMode;
-    import javafx.scene.control.TextArea;
-    import javafx.scene.control.TextField;
-    import javafx.scene.control.ToggleButton;
-    import javafx.scene.control.ToggleGroup;
-    import javafx.scene.layout.FlowPane;
+import de.hhn.se.pmt.garten.Bluetenform;
+import de.hhn.se.pmt.garten.Bodenart;
+import de.hhn.se.pmt.garten.Farbe;
+import de.hhn.se.pmt.garten.Gewaechsart;
+import de.hhn.se.pmt.garten.Wuchshoehe;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.FlowPane;
 
 /**
  * 12.12.2017
