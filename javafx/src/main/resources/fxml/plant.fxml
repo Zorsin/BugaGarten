@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -20,16 +21,16 @@
       <Label layoutX="50.0" layoutY="327.0" text="Duftend:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="327.0" />
       <Label layoutX="50.0" layoutY="150.0" text="Angepflanzt auf der BuGa:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="150.0" />
       <Label layoutX="50.0" layoutY="362.0" text="Tags:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="362.0" />
-      <TextField fx:id="textFieldBotName" layoutX="244.0" layoutY="106.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="106.0" />
-      <TextField fx:id="textFieldDeutName" layoutX="244.0" layoutY="71.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="71.0" />
+      <TextField fx:id="textFieldBotName" layoutX="244.0" layoutY="106.0" prefHeight="25.0" prefWidth="308.0" text="Viola reichenbachiana" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="106.0" />
+      <TextField fx:id="textFieldDeutName" layoutX="244.0" layoutY="71.0" prefHeight="25.0" prefWidth="308.0" text="Wald-Veilchen" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="71.0" />
       <TextArea fx:id="textAreaBeschreibung" layoutX="46.0" layoutY="498.0" prefHeight="352.0" prefWidth="509.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="498.0" />
       <ToggleButton fx:id="toogleButtonAngepflanzt" layoutX="244.0" layoutY="146.0" mnemonicParsing="false" text="nicht angepflanzt" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="146.0" />
       <ToggleButton fx:id="toogleButtonDuftend" layoutX="244.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="nicht duftend" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="323.0" />
-      <TextField fx:id="textfFieldBluezeitraum" layoutX="244.0" layoutY="181.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="181.0" />
-      <TextField fx:id="textfFieldBluehdauer" layoutX="244.0" layoutY="216.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="216.0" />
-      <TextField fx:id="textfFieldLebensdauer" layoutX="244.0" layoutY="252.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="252.0" />
-      <TextField fx:id="textfFieldAnpflanzzeitraum" layoutX="244.0" layoutY="288.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="288.0" />
-      <TextField fx:id="textfFieldTags" layoutX="244.0" layoutY="358.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="358.0" />
+      <TextField fx:id="textFieldBluezeitraum" layoutX="244.0" layoutY="181.0" prefHeight="25.0" prefWidth="308.0" text="März bis April" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="181.0" />
+      <TextField fx:id="textFieldBluehdauer" layoutX="244.0" layoutY="216.0" prefHeight="25.0" prefWidth="308.0" text="2 Wochen" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="216.0" />
+      <TextField fx:id="textFieldLebensdauer" layoutX="244.0" layoutY="252.0" prefHeight="25.0" prefWidth="308.0" text="2" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="252.0" />
+      <TextField fx:id="textFieldAnpflanzzeitraum" layoutX="244.0" layoutY="288.0" prefHeight="25.0" prefWidth="308.0" text="März" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="288.0" />
+      <TextField fx:id="textFieldTags" layoutX="244.0" layoutY="358.0" prefHeight="25.0" prefWidth="308.0" AnchorPane.leftAnchor="244.0" AnchorPane.topAnchor="358.0" />
       <TitledPane animated="false" collapsible="false" layoutX="1013.0" layoutY="71.0" prefHeight="200.0" prefWidth="387.0" text="Wuchshöhe:*">
          <content>
             <FlowPane fx:id="flowPaneWuchshoehe" prefHeight="200.0" prefWidth="200.0" />
@@ -60,5 +61,6 @@
             <FlowPane fx:id="flowPaneBodenart" prefHeight="200.0" prefWidth="200.0" />
          </content>
       </TitledPane>
+      <Button fx:id="buttonSave" layoutX="47.0" layoutY="425.0" mnemonicParsing="false" text="In Datenbank speichern" />
    </children>
 </AnchorPane>
