@@ -13,8 +13,7 @@ public class WuchshoeheUserType implements UserType {
 	private static final int[] SQL_TYPES = {Types.INTEGER};
 
 	public boolean equals(Object aObject, Object aObject2) throws HibernateException {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
+		return ((Wuchshoehe) aObject).ordinal() == ((Wuchshoehe)aObject2).ordinal();
 	}
 	
 	public int hashCode(Object aObject) throws HibernateException {
@@ -43,11 +42,12 @@ public class WuchshoeheUserType implements UserType {
 	}
 	
 	public void nullSafeSet(PreparedStatement aPreparedStatement, Object aObject, int aint, org.hibernate.engine.spi.SessionImplementor aSessionImplementor) throws HibernateException, SQLException {
-		//TODO: Implement Method
+
 		if (aObject == null){
 			aPreparedStatement.setNull(aint, Types.INTEGER);
 		}else{
-			aPreparedStatement.setString(aint, aObject.toString());
+			Wuchshoehe wuchshoehe = (Wuchshoehe) aObject;
+			aPreparedStatement.setInt(aint, wuchshoehe.ordinal());
 		}
 	}
 	

@@ -13,8 +13,7 @@ public class BodenartUserType implements UserType {
 	private static final int[] SQL_TYPES = {Types.INTEGER};
 
 	public boolean equals(Object aObject, Object aObject2) throws HibernateException {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
+		return ((Bodenart) aObject).ordinal() == ((Bodenart)aObject2).ordinal();
 	}
 	
 	public int hashCode(Object aObject) throws HibernateException {
@@ -44,12 +43,13 @@ public class BodenartUserType implements UserType {
 	}
 	
 	public void nullSafeSet(PreparedStatement aPreparedStatement, Object aObject, int aint, org.hibernate.engine.spi.SessionImplementor aSessionImplementor) throws HibernateException, SQLException {
-//		//TODO: Implement Method
+//
 //		throw new UnsupportedOperationException();
 		if (aObject == null){
 			aPreparedStatement.setNull(aint, Types.INTEGER);
 		}else{
-			aPreparedStatement.setString(aint, aObject.toString());
+			Bodenart bodenart = (Bodenart) aObject;
+			aPreparedStatement.setInt(aint, bodenart.ordinal());
 		}
 	}
 	

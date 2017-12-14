@@ -12,8 +12,7 @@ import java.io.*;
 public class FarbeUserType implements UserType {
 	private static final int[] SQL_TYPES = {Types.INTEGER};
 	public boolean equals(Object aObject, Object aObject2) throws HibernateException {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
+		return ((Farbe) aObject).ordinal() == ((Farbe)aObject2).ordinal();
 	}
 	
 	public int hashCode(Object aObject) throws HibernateException {
@@ -43,12 +42,13 @@ public class FarbeUserType implements UserType {
 	}
 	
 	public void nullSafeSet(PreparedStatement aPreparedStatement, Object aObject, int aint, org.hibernate.engine.spi.SessionImplementor aSessionImplementor) throws HibernateException, SQLException {
-		//TODO: Implement Method
+
 //		throw new UnsupportedOperationException();
 		if (aObject == null){
 			aPreparedStatement.setNull(aint, Types.INTEGER);
 		}else{
-			aPreparedStatement.setString(aint, aObject.toString());
+			Farbe farbe = (Farbe) aObject;
+			aPreparedStatement.setInt(aint, farbe.ordinal());
 		}
 	}
 	

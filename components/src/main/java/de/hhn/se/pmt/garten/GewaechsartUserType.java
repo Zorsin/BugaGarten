@@ -12,8 +12,7 @@ import java.io.*;
 public class GewaechsartUserType implements UserType {
 	private static final int[] SQL_TYPES = {Types.INTEGER};
 	public boolean equals(Object aObject, Object aObject2) throws HibernateException {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
+		return ((Gewaechsart) aObject).ordinal() == ((Gewaechsart)aObject2).ordinal();
 	}
 	
 	public int hashCode(Object aObject) throws HibernateException {
@@ -46,7 +45,8 @@ public class GewaechsartUserType implements UserType {
 		if (aObject == null){
 			aPreparedStatement.setNull(aint, Types.INTEGER);
 		}else{
-			aPreparedStatement.setString(aint, aObject.toString());
+			Gewaechsart gewaechsart = (Gewaechsart) aObject;
+			aPreparedStatement.setInt(aint, gewaechsart.ordinal());
 		}
 	}
 	
