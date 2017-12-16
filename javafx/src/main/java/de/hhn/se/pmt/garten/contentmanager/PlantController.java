@@ -202,17 +202,16 @@ public class PlantController {
     });
   }
 
-  List<RadioButton> bodenartButtons = new ArrayList<>();
-  List<RadioButton> gewaechsartButtons = new ArrayList<>();
-  List<CheckBox> bluetenfarbeButtons = new ArrayList<>();
-  List<RadioButton> bluetenformButtons = new ArrayList<>();
-  List<RadioButton> wuchshoeheButtons = new ArrayList<>();
-  List<CheckBox> fruchtfarbeButtons = new ArrayList<>();
+  private List<RadioButton> bodenartButtons = new ArrayList<>();
+  private List<RadioButton> gewaechsartButtons = new ArrayList<>();
+  private List<CheckBox> bluetenfarbeButtons = new ArrayList<>();
+  private List<RadioButton> bluetenformButtons = new ArrayList<>();
+  private List<RadioButton> wuchshoeheButtons = new ArrayList<>();
+  private List<CheckBox> fruchtfarbeButtons = new ArrayList<>();
 
 
   private void onButtonSaveClick(){
-    Bodenart bodenart = getBodenart();
-
+//    System.out.println("Check:"+checkEntryValues());
     if(checkEntryValues()){
       Alert alert = new Alert(Alert.AlertType.WARNING);
       alert.setTitle("Warnung");
@@ -241,6 +240,11 @@ public class PlantController {
       pflanze.setDuftend(toogleButtonDuftend.isSelected());
       pflanze.setAngepflanztAufBuga(toogleButtonAngepflanzt.isSelected());
       pflanze.setBewertung(0);
+
+      Farbe[] fruchtFarbenDerPflanze = pflanze.getFruchtfarbe();
+      for(Farbe f : fruchtFarbenDerPflanze){
+        System.out.println(f.name());
+      }
 
       System.out.println(pflanze);
       DAOFactory lDAOFactory = DAOFactory.getDAOFactory();
@@ -272,8 +276,8 @@ public class PlantController {
     boolean vaildDeuName = textFieldDeutName.getText().equals("");
     boolean vaildBotName = textFieldBotName.getText().equals("");
 
-    System.out.println(vaildBluete);
-    System.out.println(vaildFrucht);
+    System.out.println(vaildBluete + " " +getBluetenfarbe().length);
+    System.out.println(vaildFrucht + " " + getFruchtfarbe().length);
     System.out.println(vaildBotName);
     System.out.println(vaildDeuName);
     return vaildBluete || vaildFrucht || vaildDeuName || vaildBotName;
@@ -289,7 +293,7 @@ public class PlantController {
     }
 
     Farbe[] farbArray = new Farbe[farbes.size()];
-    for(int i=0; i<farbArray.length-1;i++){
+    for(int i=0; i<farbArray.length;i++){
       farbArray[i] = farbes.get(i);
     }
     return farbArray;
@@ -304,7 +308,7 @@ public class PlantController {
     }
 
     Farbe[] farbArray = new Farbe[farbes.size()];
-    for(int i=0; i<farbArray.length-1;i++){
+    for(int i=0; i<farbArray.length;i++){
       farbArray[i] = farbes.get(i);
     }
     return farbArray;
