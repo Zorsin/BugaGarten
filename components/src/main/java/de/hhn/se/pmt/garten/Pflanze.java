@@ -44,16 +44,17 @@ public class Pflanze implements Serializable {
 		
 	};
 	
-	@Column(name="ID", nullable=false, length=10)	
-	@Id	
-	@GeneratedValue(generator="DE_HHN_SE_PMT_GARTEN_PFLANZE_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="DE_HHN_SE_PMT_GARTEN_PFLANZE_ID_GENERATOR", strategy="native")	
+	@Column(name="ID", nullable=false, length=10)
+	@Id
+	@GeneratedValue(generator="DE_HHN_SE_PMT_GARTEN_PFLANZE_ID_GENERATOR")
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@org.hibernate.annotations.GenericGenerator(name="DE_HHN_SE_PMT_GARTEN_PFLANZE_ID_GENERATOR", strategy="native")
 	private int ID;
 	
-	@Column(name="BotanischerName", nullable=true, length=255)	
+	@Column(name="BotanischerName", nullable=false, length=255)
 	private String botanischerName;
 	
-	@Column(name="DeutscherName", nullable=true, length=255)	
+	@Column(name="DeutscherName", nullable=false, length=255)
 	private String deutscherName;
 	
 	@Column(name="Beschreibung", nullable=true, length=255)	
@@ -65,10 +66,10 @@ public class Pflanze implements Serializable {
 	@Column(name="Bluehzeitraum", nullable=true, length=255)	
 	private String bluehzeitraum;
 	
-	@Column(name="Lebensdauer", nullable=false, length=10)	
+	@Column(name="Lebensdauer", nullable=true, length=10)
 	private int lebensdauer;
 	
-	@Column(name="Bodenart", nullable=true, length=10)	
+	@Column(name="Bodenart", nullable=false, length=10)
 	@org.hibernate.annotations.Type(type="de.hhn.se.pmt.garten.BodenartUserType")	
 	@Enumerated(EnumType.ORDINAL)	
 	private de.hhn.se.pmt.garten.Bodenart bodenart;
@@ -76,7 +77,7 @@ public class Pflanze implements Serializable {
 	@Column(name="Anpflanzzeitraum", nullable=true, length=255)	
 	private String anpflanzzeitraum;
 	
-	@Column(name="Wuchshoehe", nullable=true, length=10)	
+	@Column(name="Wuchshoehe", nullable=false, length=10)
 	@org.hibernate.annotations.Type(type="de.hhn.se.pmt.garten.WuchshoeheUserType")	
 	@Enumerated(EnumType.ORDINAL)	
 	private de.hhn.se.pmt.garten.Wuchshoehe wuchshoehe;
@@ -84,20 +85,20 @@ public class Pflanze implements Serializable {
 	@Column(name="Duftend", nullable=false, length=1)	
 	private boolean duftend;
 	
-	@Column(name="Gewaechsart", nullable=true, length=10)	
+	@Column(name="Gewaechsart", nullable=false, length=10)
 	@org.hibernate.annotations.Type(type="de.hhn.se.pmt.garten.GewaechsartUserType")	
 	@Enumerated(EnumType.ORDINAL)	
 	private de.hhn.se.pmt.garten.Gewaechsart gewaechsart;
 	
-	@Column(name="Bluetenform", nullable=true, length=10)	
+	@Column(name="Bluetenform", nullable=false, length=10)
 	@org.hibernate.annotations.Type(type="de.hhn.se.pmt.garten.BluetenformUserType")	
 	@Enumerated(EnumType.ORDINAL)	
 	private de.hhn.se.pmt.garten.Bluetenform bluetenform;
 	
-	@Column(name="AngepflanztAufBuga", nullable=false, length=1)	
+	@Column(name="AngepflanztAufBuga", nullable=true, length=1)
 	private boolean angepflanztAufBuga;
 	
-	@Column(name="Bewertung", nullable=false)	
+	@Column(name="Bewertung", nullable=true)
 	private double bewertung;
 	
 	@ElementCollection	
@@ -107,16 +108,16 @@ public class Pflanze implements Serializable {
 	private String[] tag;
 	
 	@ElementCollection	
-	@CollectionTable(name="BluetenFrarbe", joinColumns={ @JoinColumn(name="PflanzeID") })	
+	@CollectionTable(name="Bluetenfarbe", joinColumns={ @JoinColumn(name="PflanzeID") })
 	@org.hibernate.annotations.IndexColumn(name="PflanzeIndex")	
-	@Column(name="Bluetenfarbe", nullable=true, length=11)	
+	@Column(name="Bluetenfarbe", nullable=false, length=11)
 	@org.hibernate.annotations.Type(type="de.hhn.se.pmt.garten.FarbeUserType")	
 	private de.hhn.se.pmt.garten.Farbe[] bluetenfarbe;
 	
 	@ElementCollection	
 	@CollectionTable(name="Fruchtfarbe", joinColumns={ @JoinColumn(name="PflanzeID") })	
 	@org.hibernate.annotations.IndexColumn(name="PflanzeIndex")	
-	@Column(name="Fruchtfarbe", nullable=true, length=11)	
+	@Column(name="Fruchtfarbe", nullable=false, length=11)
 	@org.hibernate.annotations.Type(type="de.hhn.se.pmt.garten.FarbeUserType")	
 	private de.hhn.se.pmt.garten.Farbe[] fruchtfarbe;
 	
@@ -139,7 +140,7 @@ public class Pflanze implements Serializable {
 	private void setID(int value) {
 		this.ID = value;
 	}
-	
+
 	public int getID() {
 		return ID;
 	}
