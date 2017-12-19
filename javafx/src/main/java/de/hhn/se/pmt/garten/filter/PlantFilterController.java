@@ -20,7 +20,7 @@ import org.orm.PersistentException;
 
 public class PlantFilterController {
 
-  DAOFactory daoFactory= DAOFactory.getDAOFactory();
+  DAOFactory daoFactory = DAOFactory.getDAOFactory();
   private static final int ROW_COUNT = 100;
 
   @FXML
@@ -67,8 +67,11 @@ public class PlantFilterController {
   }
 
   public void ListFilter() throws PersistentException {
-    String condition= "DeutscherName = '"+tfFilterName.getText()+"'";
-    de.hhn.se.pmt.garten.Pflanze[] dehhnsepmtgartenPflanzes = daoFactory.getPflanzeDAO().listPflanzeByQuery(condition, null);
+    String condition =
+        "DeutscherName LIKE '%" + tfFilterName.getText() + "%' OR BotanischerName LIKE '%"
+            + tfFilterName.getText() + "%'";
+    de.hhn.se.pmt.garten.Pflanze[] dehhnsepmtgartenPflanzes = daoFactory.getPflanzeDAO()
+        .listPflanzeByQuery(condition, null);
     int length = Math.min(dehhnsepmtgartenPflanzes.length, ROW_COUNT);
     for (int i = 0; i < length; i++) {
       System.out.println(dehhnsepmtgartenPflanzes[i]);
