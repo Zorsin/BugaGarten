@@ -16,7 +16,8 @@ public enum Farbe {
 	orange,
 	rot,
 	violett,
-	schwarz;
+	schwarz,
+	keine;
 	private int ID;
 	public static Farbe get(int i){
 		switch (i){
@@ -26,6 +27,20 @@ public enum Farbe {
 				return gelb;
 			case 2:
 				return roetlich;
+			case 3:
+				return blaeulich;
+			case 4:
+				return gruen;
+			case 5:
+				return orange;
+			case 6:
+				return rot;
+			case 7:
+				return violett;
+			case 8:
+				return schwarz;
+			case 9:
+				return keine;
 			default:
 				return weiss;
 		}
