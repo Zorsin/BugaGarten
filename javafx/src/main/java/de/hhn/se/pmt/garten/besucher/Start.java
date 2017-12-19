@@ -18,7 +18,7 @@ public class Start extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception{
 
-    VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/anzeigen.fxml"));
+    VBox root = FXMLLoader.load(getClass().getResource("/fxml/anzeigen.fxml"));
     primaryStage.setTitle("Pflanzeninfo");
     Scene scene = new Scene(root);
     primaryStage.setScene(scene);
