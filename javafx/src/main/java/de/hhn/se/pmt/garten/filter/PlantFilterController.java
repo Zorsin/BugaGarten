@@ -67,8 +67,7 @@ public class PlantFilterController {
   }
 
   public void ListFilter() throws PersistentException {
-    String condition= "DeutscherName = "+tfFilterName.getText();
-    System.out.println("Listing Pflanze...");
+    String condition= "DeutscherName = '"+tfFilterName.getText()+"'";
     de.hhn.se.pmt.garten.Pflanze[] dehhnsepmtgartenPflanzes = daoFactory.getPflanzeDAO().listPflanzeByQuery(condition, null);
     int length = Math.min(dehhnsepmtgartenPflanzes.length, ROW_COUNT);
     for (int i = 0; i < length; i++) {
