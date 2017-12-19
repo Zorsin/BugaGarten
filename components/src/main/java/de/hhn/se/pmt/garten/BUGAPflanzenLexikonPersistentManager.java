@@ -30,7 +30,6 @@ public class BUGAPflanzenLexikonPersistentManager extends PersistentManager {
 	
 	private BUGAPflanzenLexikonPersistentManager() throws PersistentException {
 		super(_connectionSetting, _sessionType, _timeToAlive, new String[] {}, _extraProperties, _configurationFile);
-		System.out.println(BUGAPflanzenLexikonPersistentManager.class.getResourceAsStream("src/ormmapping/BUGAPflanzenlexikon.cfg.xml"));
 		setFlushMode(FlushMode.AUTO);
 	}
 
