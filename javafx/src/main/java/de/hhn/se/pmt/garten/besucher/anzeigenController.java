@@ -59,6 +59,9 @@ public class anzeigenController implements Initializable {
   @FXML
   private CheckBox cbangepflanzt;
 
+  @FXML
+  private CheckBox cbduftend;
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
@@ -67,10 +70,12 @@ public class anzeigenController implements Initializable {
       Pflanze[] plantList = DAOFactoryImpl.getDAOFactory().getPflanzeDAO().listPflanzeByQuery(null, "DeutscherName");
       String[] nameList = new String[plantList.length];
       for (int i = 0; i < nameList.length; i++) nameList[i] = plantList[i].getDeutscherName();
-      cbangepflanzt.setDisable(true);
+
       cbauswahl.setItems(FXCollections.observableArrayList(nameList));
       cbauswahl.getSelectionModel().selectedIndexProperty().addListener(event -> {
         Pflanze p = plantList[cbauswahl.getSelectionModel().getSelectedIndex()];
+        cbduftend.setText("");
+        cbangepflanzt.setText("");
 
         lblbotanisch.setText(p.getBotanischerName());
         lbldeutsch.setText(p.getDeutscherName());
@@ -80,7 +85,7 @@ public class anzeigenController implements Initializable {
         lblbodenart.setText(p.getBodenart() + "");
         lblanpflanzzeitraum.setText(p.getAnpflanzzeitraum());
         lblwuchshoehe.setText(p.getWuchshoehe() + "");
-        lblduftend.setText(p.getDuftend() + "");
+        cbduftend.setSelected(p.getDuftend());
         lblgewaechsart.setText(p.getGewaechsart() + "");
         lblbluetenform.setText(p.getBluetenform() + "");
         cbangepflanzt.setSelected(p.getAngepflanztAufBuga());
