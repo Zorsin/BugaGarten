@@ -14,7 +14,8 @@ public class BluetenformUserType implements UserType {
 
 	public boolean equals(Object aObject, Object aObject2) throws HibernateException {
 		//TODO: Implement Method
-		throw new UnsupportedOperationException();
+//		throw new UnsupportedOperationException();
+		return ((Bluetenform) aObject).ordinal() == ((Bluetenform)aObject2).ordinal();
 	}
 	
 	public int hashCode(Object aObject) throws HibernateException {
@@ -46,10 +47,11 @@ public class BluetenformUserType implements UserType {
 	public void nullSafeSet(PreparedStatement aPreparedStatement, Object aObject, int aint, org.hibernate.engine.spi.SessionImplementor aSessionImplementor) throws HibernateException, SQLException {
 		//TODO: Implement Method
 //		throw new UnsupportedOperationException();
+		Bluetenform bluetenform = (Bluetenform) aObject;
 		if (aObject == null){
 			aPreparedStatement.setNull(aint, Types.INTEGER);
 		}else{
-			aPreparedStatement.setString(aint, aObject.toString());
+			aPreparedStatement.setInt(aint, bluetenform.ordinal());
 		}
 	}
 	
