@@ -42,8 +42,8 @@
                   <Label fx:id="lblgewaechsart" layoutX="6.0" layoutY="153.0" text="Label" />
                   <Label fx:id="lblbluetenform" layoutX="6.0" layoutY="170.0" text="Label" />
                   <Label fx:id="lblbewertung" layoutX="6.0" layoutY="207.0" text="Label" />
-                  <CheckBox fx:id="cbangepflanzt" layoutX="14.0" layoutY="187.0" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="cbduftend" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="cbangepflanzt" disable="true" layoutX="14.0" layoutY="187.0" mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="cbduftend" disable="true" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" text="CheckBox" />
                </children>
             </AnchorPane>
         </items>

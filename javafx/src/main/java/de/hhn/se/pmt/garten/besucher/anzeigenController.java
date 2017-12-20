@@ -68,14 +68,17 @@ public class anzeigenController implements Initializable {
     try {
 
       Pflanze[] plantList = DAOFactoryImpl.getDAOFactory().getPflanzeDAO().listPflanzeByQuery(null, "DeutscherName");
+
       String[] nameList = new String[plantList.length];
       for (int i = 0; i < nameList.length; i++) nameList[i] = plantList[i].getDeutscherName();
-
       cbauswahl.setItems(FXCollections.observableArrayList(nameList));
       cbauswahl.getSelectionModel().selectedIndexProperty().addListener(event -> {
+
         Pflanze p = plantList[cbauswahl.getSelectionModel().getSelectedIndex()];
         cbduftend.setText("");
         cbangepflanzt.setText("");
+        cbduftend.setStyle("-fx-opacity: 1");
+        cbangepflanzt.setStyle("-fx-opacity: 1");
 
         lblbotanisch.setText(p.getBotanischerName());
         lbldeutsch.setText(p.getDeutscherName());
