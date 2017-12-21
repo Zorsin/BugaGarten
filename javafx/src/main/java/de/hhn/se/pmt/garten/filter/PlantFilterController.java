@@ -6,7 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import org.orm.PersistentException;
 
 /**
@@ -25,7 +26,7 @@ public class PlantFilterController {
   private TextField tfFilterName;
 
   @FXML
-  private CheckBox cbBlueht;
+  private CheckBox cbAngepflanzt;
 
   @FXML
   private CheckBox cbFruechte;
@@ -34,32 +35,34 @@ public class PlantFilterController {
   private Button btSubmitFilter;
 
   @FXML
-  private FlowPane flowAusgabe;
+  private VBox vBoxOutput;
 
   @FXML
   public void initialize() {
 
     assert tfFilterName
         != null : "fx:id=\"tfFilterName\" was not injected: check your FXML file 'filter.fxml'.";
-    assert cbBlueht
+    assert cbAngepflanzt
         != null : "fx:id=\"cbBlueht\" was not injected: check your FXML file 'filter.fxml'.";
     assert cbFruechte
         != null : "fx:id=\"cbFruechte\" was not injected: check your FXML file 'filter.fxml'.";
 
     btSubmitFilter.setOnAction(event -> {
-      /*
       try {
-        ListFilter();
+        listFilter(tfFilterName.getText());
       } catch (PersistentException e) {
         e.printStackTrace();
-      }*/
-      onClick();
+      }
     });
-    tfFilterName.setOnKeyTyped(event -> {
+    tfFilterName.setOnKeyPressed((KeyEvent event) -> {
+      System.out.println(event.getText());
+      System.out.println(tfFilterName.getText());
+      String filter = tfFilterName.getText() + event.getText();
 
-      if (tfFilterName.getText().length()>2) { //Wenn 3 Buchstaben eingegeben wurde feurere los und hole DAten aus der DB
+      if (filter.length()
+          > 2) { //Wenn 3 Buchstaben eingegeben wurde feurere los und hole Daten aus der DB
         try {
-          ListFilter();
+          listFilter(filter);
         } catch (PersistentException e) {
           e.printStackTrace();
         }
@@ -72,25 +75,34 @@ public class PlantFilterController {
       System.out.println("leer");
     } else {
       System.out.println(tfFilterName.getText());
-      String a = cbBlueht.isSelected() ? "true" : "false";
+      String a = cbAngepflanzt.isSelected() ? "true" : "false";
       System.out.println("Blüht: " + a);
       String b = cbFruechte.isSelected() ? "true" : "false";
       System.out.println("Früchte: " + b);
-      flowAusgabe.getChildren().add(new Label(tfFilterName.getText()));
+      vBoxOutput.getChildren().add(new Label(tfFilterName.getText()));
     }
   }
 
-  public void ListFilter() throws PersistentException {
-    flowAusgabe.getChildren().clear();
-    String condition =
-        "DeutscherName LIKE '%" + tfFilterName.getText() + "%' OR BotanischerName LIKE '%"
-            + tfFilterName.getText() + "%'";
+  public void listFilter(String x) throws PersistentException {
+    vBoxOutput.getChildren().clear();
+    String condition;
+    if (cbAngepflanzt.isSelected()) {
+      condition =
+          "AngepflanztAufBuga = 1 AND (DeutscherName LIKE '%" + x + "%' OR BotanischerName LIKE '%"
+              + x + "%')";
+    } else {
+      condition =
+          "DeutscherName LIKE '%" + x + "%' OR BotanischerName LIKE '%"
+              + x + "%'";
+    }
+
     de.hhn.se.pmt.garten.Pflanze[] dehhnsepmtgartenPflanzes = daoFactory.getPflanzeDAO()
         .listPflanzeByQuery(condition, null);
     int length = Math.min(dehhnsepmtgartenPflanzes.length, ROW_COUNT);
     for (int i = 0; i < length; i++) {
       System.out.println(dehhnsepmtgartenPflanzes[i]);
-      flowAusgabe.getChildren().add(new Label(dehhnsepmtgartenPflanzes[i].toString()));
+      vBoxOutput.getChildren()
+          .add(new Label(dehhnsepmtgartenPflanzes[i].toString().substring(1) + ","));
     }
     System.out.println(length + " record(s) retrieved.");
   }
