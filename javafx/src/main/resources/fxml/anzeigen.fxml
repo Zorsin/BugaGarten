@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="292.0" prefWidth="284.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.se.pmt.garten.besucher.anzeigenController">
+   <children>
+      <ChoiceBox fx:id="cbauswahl" prefWidth="150.0" />
+      <SplitPane dividerPositions="0.39568345323741005" prefHeight="267.0" prefWidth="256.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="117.0">
+               <children>
+                  <Label layoutX="6.0" text="Botanischer Nam:e:" />
+                  <Label layoutX="6.0" layoutY="17.0" text="Deutscher Name:" />
+                  <Label layoutX="6.0" layoutY="34.0" text="Beschreibung:" />
+                  <Label layoutX="6.0" layoutY="51.0" text="Blühdauer:" />
+                  <Label layoutX="6.0" layoutY="68.0" text="Lebensdauer:" />
+                  <Label layoutX="6.0" layoutY="85.0" text="Bodenart:" />
+                  <Label layoutX="6.0" layoutY="102.0" text="Anpflanzzeitraum:" />
+                  <Label layoutX="6.0" layoutY="119.0" text="Wuchshöhe:" />
+                  <Label layoutX="6.0" layoutY="136.0" text="Duftend:" />
+                  <Label layoutX="6.0" layoutY="153.0" text="Gewächsart:" />
+                  <Label layoutX="6.0" layoutY="170.0" text="Blütenform:" />
+                  <Label layoutX="6.0" layoutY="187.0" text="Angepflanzt:" />
+                  <Label layoutX="6.0" layoutY="204.0" text="Bewertung:" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="175.0">
+               <children>
+                  <Label fx:id="lblbotanisch" layoutX="6.0" text="Label" />
+                  <Label fx:id="lbldeutsch" layoutX="6.0" layoutY="17.0" text="Label" />
+                  <Label fx:id="lblbeschreibung" layoutX="6.0" layoutY="34.0" text="Label" />
+                  <Label fx:id="lblbluehdauer" layoutX="6.0" layoutY="51.0" text="Label" />
+                  <Label fx:id="lbllebensdauer" layoutX="6.0" layoutY="68.0" text="Label" />
+                  <Label fx:id="lblbodenart" layoutX="6.0" layoutY="85.0" text="Label" />
+                  <Label fx:id="lblanpflanzzeitraum" layoutX="6.0" layoutY="102.0" text="Label" />
+                  <Label fx:id="lblwuchshoehe" layoutX="6.0" layoutY="119.0" text="Label" />
+                  <Label fx:id="lblgewaechsart" layoutX="6.0" layoutY="153.0" text="Label" />
+                  <Label fx:id="lblbluetenform" layoutX="6.0" layoutY="170.0" text="Label" />
+                  <Label fx:id="lblbewertung" layoutX="6.0" layoutY="207.0" text="Label" />
+                  <CheckBox fx:id="cbangepflanzt" disable="true" layoutX="14.0" layoutY="187.0" mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="cbduftend" disable="true" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" text="CheckBox" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
