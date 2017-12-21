@@ -9,6 +9,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -58,6 +59,7 @@
                   <CheckBox fx:id="cbBlueht" layoutX="14.0" layoutY="93.0" mnemonicParsing="false" text="Planze blüht gerade" />
                   <CheckBox fx:id="cbFruechte" layoutX="14.0" layoutY="126.0" mnemonicParsing="false" text="Planze trägt gerade Früchte" />
                   <Button fx:id="btSubmitFilter" layoutX="508.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Pflanzen filtern" />
+                  <FlowPane fx:id="flowAusgabe" layoutX="313.0" layoutY="10.0" prefHeight="299.0" prefWidth="298.0" />
                </children>
             </Pane>
          </children>
