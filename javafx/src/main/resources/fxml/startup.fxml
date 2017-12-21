@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.se.pmt.garten.StartupController">
+   <children>
+      <Button fx:id="buttonStartFilter" layoutX="94.0" layoutY="110.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Start Filter" />
+      <Button fx:id="buttonStartAnsicht" layoutX="94.0" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Start Ansicht" />
+      <Button fx:id="buttonStartContentManger" layoutX="94.0" layoutY="200.0" mnemonicParsing="false" text="Start Contentmanager" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Start other">
+            <items>
+                  <MenuItem fx:id="menuStartContent" mnemonicParsing="false" text="Start Contentmanager" />
+              <MenuItem fx:id="menuStartFilter" mnemonicParsing="false" text="Start Filter" />
+                  <MenuItem fx:id="menuStartAnsicht" mnemonicParsing="false" text="Start Ansicht" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
