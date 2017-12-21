@@ -72,13 +72,15 @@ public class anzeigenController implements Initializable {
       String[] nameList = new String[plantList.length];
       for (int i = 0; i < nameList.length; i++) nameList[i] = plantList[i].getDeutscherName();
       cbauswahl.setItems(FXCollections.observableArrayList(nameList));
+
+      cbduftend.setStyle("-fx-opacity: 1");
+      cbduftend.setText("");
+      cbangepflanzt.setStyle("-fx-opacity: 1");
+      cbangepflanzt.setText("");
+
       cbauswahl.getSelectionModel().selectedIndexProperty().addListener(event -> {
 
         Pflanze p = plantList[cbauswahl.getSelectionModel().getSelectedIndex()];
-        cbduftend.setText("");
-        cbangepflanzt.setText("");
-        cbduftend.setStyle("-fx-opacity: 1");
-        cbangepflanzt.setStyle("-fx-opacity: 1");
 
         lblbotanisch.setText(p.getBotanischerName());
         lbldeutsch.setText(p.getDeutscherName());
@@ -88,12 +90,15 @@ public class anzeigenController implements Initializable {
         lblbodenart.setText(p.getBodenart() + "");
         lblanpflanzzeitraum.setText(p.getAnpflanzzeitraum());
         lblwuchshoehe.setText(p.getWuchshoehe() + "");
+        cbduftend.setDisable(false);
         cbduftend.setSelected(p.getDuftend());
+        cbduftend.setDisable(true);
         lblgewaechsart.setText(p.getGewaechsart() + "");
         lblbluetenform.setText(p.getBluetenform() + "");
+        cbangepflanzt.setDisable(false);
         cbangepflanzt.setSelected(p.getAngepflanztAufBuga());
+        cbangepflanzt.setDisable(true);
         lblbewertung.setText(p.getBewertung() + "");
-
       });
       cbauswahl.getSelectionModel().selectFirst();
     } catch (Exception e) {
